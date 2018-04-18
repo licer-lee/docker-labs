@@ -23,13 +23,13 @@
 
 
 	</dependencies>
-	<pluginRepositories>
+	<!-- <pluginRepositories>
 		<pluginRepository>
 			<id>mesosphere-repo</id>
 			<name>Mesosphere Repo</name>
 			<url>http://downloads.mesosphere.io/maven</url>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories> -->
 	<build>
 		<plugins>
 			<plugin>
