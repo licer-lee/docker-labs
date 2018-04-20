@@ -1,2 +1,2 @@
-docker image build . -t hello-world-java:latest
-docker container run hello-world-java:latest
+docker image build . -t licerlee/hello-world-java:latest
+docker container run licerlee/hello-world-java:latest
