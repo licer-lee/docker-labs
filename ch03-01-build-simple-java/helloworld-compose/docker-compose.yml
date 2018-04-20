@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: licerlee/hello-world-java:v2
+    image: licerlee/hello-world-java:latest
     deploy:
       replicas: 3
       resources:
