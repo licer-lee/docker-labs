@@ -3,7 +3,7 @@ services:
   web:
     image: licerlee/hello-world-java:latest
     deploy:
-      replicas: 3
+      replicas: 4
       resources:
         limits:
           cpus: '0.1'
