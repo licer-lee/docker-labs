@@ -1,2 +1,2 @@
-docker image build . -t hello-java:latest
-docker container run hello-java:latest
+docker image build . -t hello-world-java:latest
+docker container run hello-world-java:latest
