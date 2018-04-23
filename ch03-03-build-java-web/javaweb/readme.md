@@ -4,6 +4,9 @@
  # 部署集群应用
  docker stack deploy -c docker-compose.yml <deploy-name>
  
+ # 查看service
+ docker service ls
+ 
  # 查看启动的容器
  docker stack ps <deploy-name>
  
