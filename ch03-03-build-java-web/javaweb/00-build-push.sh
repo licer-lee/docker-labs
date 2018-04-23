@@ -12,4 +12,4 @@ docker login -u licerlee
 docker push licerlee/javaweb:v2
 
 # 退出登陆
-docker logout
+# docker logout
