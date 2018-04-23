@@ -3,7 +3,7 @@
 mvn clean package
 
 # 构建镜像
-docker build . licerlee/javaweb:v2
+docker build . -t licerlee/javaweb:v2
 
 # 登陆hub
 docker login -u licerlee
