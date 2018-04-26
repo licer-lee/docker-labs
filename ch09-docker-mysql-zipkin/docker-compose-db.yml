@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: hub.c.163.com/library/mysql:5.7
+    container_name: mysql
+    volumes:
+    - /opt/mysql/data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: testDB
+    ports:
+    - 3306:3306
+    networks:
+    - default
+    - app_net
+networks:
+  app_net:
+    external: true

@@ -20,7 +20,7 @@ docker exec -it some-mysql bash
 docker logs some-mysql
 
 #Using a custom MySQL configuration file
-docker run --name mysql57 -v /opt/mysql57/cnf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=root123 -d -p 3306:3306 mysql:5.7
+docker run --name mysql57 -v /opt/mysql57/cnf:/etc/mysql/mysql.conf.d/ -e MYSQL_ROOT_PASSWORD=root123 -d -p 3306:3306 mysql:5.7
 
 chcon -Rt svirt_sandbox_file_t /my/custom
 
@@ -36,6 +36,13 @@ docker run --rm --name mysql57 -v /opt/mysql57/data:/var/lib/mysql -e MYSQL_ROOT
 #Usage against an existing database
 ###如果使用已经包含数据库（特别是，一个mysql子目录）的数据目录启动mysql容器实例，则应该在运行命令行中省略$ MYSQL_ROOT_PASSWORD变量; 在任何情况下都会被忽略，并且预先存在的数据库不会以任何方式进行更改。
 docker run --rm --name mysql57 -v /opt/mysql57/data:/var/lib/mysql -d -p 3306:3306 mysql:5.7
+
+
+
+# 使用已经存在的数据库文件及挂载外部配置文件目录
+docker run --rm --name mysql57 -v /opt/mysql57/data:/var/lib/mysql -v /opt/mysql57/cnf:/etc/mysql/mysql.conf.d/ -d -p 3306:3306 mysql:5.7
+
+
 
 #Creating database dumps
 ###大多数普通工具都可以工作，尽管在某些情况下它们的使用可能会有些复杂，以确保它们可以访问mysqld服务器。 确保这一点的一个简单方法是使用docker exec并从同一个容器运行该工具，类似于以下内容：
