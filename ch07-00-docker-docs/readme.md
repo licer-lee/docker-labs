@@ -35,7 +35,8 @@ WORKDIR /usr/local/myapp
 
 
 
-
+#要获取所有容器名称及其IP地址只需一个命令。
+docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
 
 
 

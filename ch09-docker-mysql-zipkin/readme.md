@@ -20,3 +20,14 @@ docker exec -it zipkin ping mysql
 浏览器访问： http:// ip:8082/zipkin
 
 6. 停止
+docker stack rm docker-compose-db
+docker stack rm docker-compose-zipkin
+
+or
+
+docker-compose -f docker-compose-db.yml down
+docker-compose down -f docker-compose-zipkin.yml 
+
+
+ps: 启动官方zipkin镜像
+docker run --rm -d -p 8083:9411 openzipkin/zipkin
