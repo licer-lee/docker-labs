@@ -8,7 +8,7 @@ docker run --rm --name mysql57 -v /opt/mysql57/data:/var/lib/mysql -v /opt/mysql
 # 测试启动一个数据库
 docker run \
 	--rm \
-	--character-set-server=utf8mb4 \			# 默认字符集编码
+	--character-set-server=utf8mb4 \
 	--collation-server=utf8mb4_unicode_ci \
 	--name mysql57-she \
 	-v ./mysql/data:/var/lib/mysql \
